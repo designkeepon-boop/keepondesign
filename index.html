@@ -11,10 +11,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         
         :root {
-            /* Renkler kahve/turuncu tonlarında tutuldu (Önceki geri alma işlemine dahil değildi) */
+            /* Renkler kahve/turuncu tonlarında tutuldu */
             --color-background: #FAF8F4;
-            --color-accent: #C47A3E; 
-            --color-dark: #3E2723;
+            --color-accent: #C47A3E; /* Ana Vurgu Rengi */
+            --color-dark: #3E2723; /* Koyu Kahve (Footer) */
         }
 
         body {
@@ -28,6 +28,15 @@
         .bg-accent { background-color: var(--color-accent); }
         .hover-bg-accent:hover { background-color: #a76634; } /* Hafif koyu ton */
         .bg-dark { background-color: var(--color-dark); }
+        
+        /* Mobil Navigasyon için ek stil (şimdilik gizli) */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            transform: translateY(-100%);
+        }
+        #mobile-menu.open {
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -36,17 +45,50 @@
     <header class="sticky top-0 z-50 bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+                
+                <!-- Logo -->
                 <div class="flex justify-start lg:w-0 lg:flex-1">
-                    <!-- LOGO ALANI ESKİ METİN HALİNE DÖNDÜRÜLDÜ -->
-                    <a href="#" class="text-2xl font-extrabold tracking-tight text-gray-900">
-                        <span class="text-accent">Keep On</span> Design
+                    <a href="#" class="flex items-center space-x-2">
+                        <!-- YENİ GÖRSEL LOGO -->
+                        <img 
+                            src="https://raw.githubusercontent.com/designkeepon-boop/keepondesign/refs/heads/main/src/unnamed.jpg" 
+                            alt="Keep On Design Logo" 
+                            class="w-10 h-10 rounded-full shadow-md"
+                            onerror="this.onerror=null;this.style.display='none'; document.getElementById('logo-text-header').style.display='block';"
+                        >
+                        <!-- Metin Logosu (Görsel Yüklenemezse Yedek) -->
+                        <span id="logo-text-header" class="text-2xl font-extrabold tracking-tight text-gray-900" style="display: block;">
+                             <span class="text-accent">Keep On</span> Design
+                        </span>
                     </a>
                 </div>
+                
+                <!-- Desktop Navigasyon -->
                 <nav class="hidden md:flex space-x-10">
-                    <a href="#hizmetler" class="text-base font-medium text-gray-500 hover:text-accent transition duration-150">Hizmetlerimiz</a>
-                    <a href="#calismalar" class="text-base font-medium text-gray-500 hover:text-accent transition duration-150">Çalışma Alanları</a>
-                    <a href="#iletisim" class="text-base font-medium text-gray-500 hover:text-accent transition duration-150">İletişim</a>
+                    <a href="#hizmetler" class="text-base font-medium text-gray-500 hover:text-accent transition duration-150 rounded-full py-2 px-3">Hizmetlerimiz</a>
+                    <a href="#calismalar" class="text-base font-medium text-gray-500 hover:text-accent transition duration-150 rounded-full py-2 px-3">Çalışma Alanları</a>
+                    <a href="#iletisim" class="text-base font-medium text-gray-500 hover:text-accent transition duration-150 rounded-full py-2 px-3">İletişim</a>
                 </nav>
+
+                <!-- Mobil Menü Butonu -->
+                <div class="md:hidden">
+                    <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent" id="mobile-menu-button">
+                        <span class="sr-only">Menüyü Aç</span>
+                        <!-- Icon: Hamburger -->
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobil Menü Açılır Alanı (Gizli) -->
+        <div class="absolute w-full bg-white shadow-lg md:hidden hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#hizmetler" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50">Hizmetlerimiz</a>
+                <a href="#calismalar" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50">Çalışma Alanları</a>
+                <a href="#iletisim" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50">İletişim</a>
             </div>
         </div>
     </header>
@@ -54,13 +96,13 @@
     <!-- Hero Section -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 text-center">
         <div class="max-w-4xl mx-auto">
-            <!-- Afilli Cümle 1: Başlık -->
+            <!-- Afilli Cümle 1: Başlık (GÜNCELLENDİ) -->
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight">
-                Mekanı Yeniden <span class="text-accent">Tanımlıyoruz</span>. <br class="hidden sm:inline"> Geleceği Tasarlıyoruz.
+                Hayallerinizi <span class="text-accent">Gerçeğe</span> Dönüştürüyoruz.
             </h1>
-            <!-- Afilli Cümle 2: Açıklama -->
+            <!-- Afilli Cümle 2: Açıklama (GÜNCELLENDİ) -->
             <p class="mt-6 text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                Sadece çizim yapmıyoruz, yaşam alanlarına ruh katıyoruz. Detaylı analizlerden ilham alan, teknik yeterlilikle harmanlanmış yaratıcı çözümlerimizle vizyonunuzu gerçeğe dönüştürüyoruz.
+                Keep On Design, yaratıcı tasarım çözümlerinin yanı sıra Netcad ve ArcGIS uzmanlığıyla şehir planlama alanında da hizmet vermektedir. Mekansal analizler, 3D modelleme ve haritalama yeteneklerimizle şehirlerin geleceğini şekillendiriyoruz.
             </p>
             <div class="mt-10 flex justify-center space-x-4">
                 <a href="#hizmetler" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-accent hover-bg-accent shadow-lg transition duration-300 transform hover:scale-105">
@@ -71,7 +113,6 @@
     </section>
 
     <!-- Services Section -->
-    <!-- Hizmetler bölümü arka planı tekrar beyaz yapıldı, gölge eklendi -->
     <section id="hizmetler" class="py-16 sm:py-24 bg-white rounded-t-3xl shadow-2xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
@@ -83,9 +124,8 @@
 
             <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-10">
                 
-                <!-- Hizmet Kartı 1 -->
+                <!-- Hizmet Kartı 1: Modelleme -->
                 <div class="pt-6">
-                    <!-- Kartın arka planı açık bej yapıldı -->
                     <div class="flow-root bg-gray-50 rounded-xl px-6 pb-8 h-full shadow-lg hover:shadow-xl transition duration-300">
                         <div class="-mt-6">
                             <div>
@@ -96,13 +136,13 @@
                             </div>
                             <h3 class="mt-6 text-xl font-semibold text-gray-900 tracking-tight">Modelleme Çalışmaları</h3>
                             <p class="mt-4 text-base text-gray-500">
-                                Projelerinizi gerçeğe en yakın haliyle deneyimlemenizi sağlayan fotogerçekçi 3D modelleme ve görselleştirme hizmetleri sunuyoruz.
+                                Projelerinizi gerçeğe en yakın haliyle deneyimlemenizi sağlayan fotogerçekçi 3D modelleme, görselleştirme ve afiş/poster tasarım hizmetleri sunuyoruz.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hizmet Kartı 2 -->
+                <!-- Hizmet Kartı 2: Kentsel Tasarım/Analiz -->
                 <div class="pt-6">
                     <div class="flow-root bg-gray-50 rounded-xl px-6 pb-8 h-full shadow-lg hover:shadow-xl transition duration-300">
                         <div class="-mt-6">
@@ -114,13 +154,13 @@
                             </div>
                             <h3 class="mt-6 text-xl font-semibold text-gray-900 tracking-tight">Kentsel Tasarım ve Analiz</h3>
                             <p class="mt-4 text-base text-gray-500">
-                                Yaşanabilir, sürdürülebilir ve kimlikli kentler için kapsamlı kentsel tasarım projeleri ve detaylı mekansal analizler gerçekleştiriyoruz.
+                                Yaşanabilir, sürdürülebilir ve kimlikli kentler için kapsamlı kentsel tasarım projeleri ve detaylı mekansal, çevresel risk analizleri gerçekleştiriyoruz.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hizmet Kartı 3 -->
+                <!-- Hizmet Kartı 3: Teknik Çizim ve Araştırma -->
                 <div class="pt-6">
                     <div class="flow-root bg-gray-50 rounded-xl px-6 pb-8 h-full shadow-lg hover:shadow-xl transition duration-300">
                         <div class="-mt-6">
@@ -132,7 +172,7 @@
                             </div>
                             <h3 class="mt-6 text-xl font-semibold text-gray-900 tracking-tight">Teknik Çizim ve Araştırma</h3>
                             <p class="mt-4 text-base text-gray-500">
-                                Kusursuz teknik çizimler, detaylı planlar ve projenizin temelini oluşturan güvenilir literatür taramaları sağlıyoruz.
+                                Kusursuz teknik çizimler (imar planı, çevre düzeni) ve projenizin akademik temelini oluşturan güvenilir literatür taramaları sağlıyoruz.
                             </p>
                         </div>
                     </div>
@@ -163,8 +203,8 @@
                         </ul>
                     </div>
                     <div class="md:w-1/2 mt-8 md:mt-0 relative rounded-xl overflow-hidden shadow-2xl">
-                        <!-- Placeholder Image for Urban Design Map (Yeni vurgu rengi kullanıldı) -->
-                        <img src="https://placehold.co/600x400/C47A3E/FFFFFF?text=KENTSEL+TASARIM+HARİTASI" alt="Kentsel tasarım haritası placeholder" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/C47A3E/FFFFFF?text=KENTSEL+TASARIM+HARİTASI'">
+                        <!-- Placeholder Image for Urban Design Map -->
+                        <img src="https://placehold.co/600x400/C47A3E/FFFFFF?text=ANALİZ+VE+MASTER+PLAN" alt="Kentsel tasarım haritası placeholder" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/C47A3E/FFFFFF?text=ANALİZ+VE+MASTER+PLAN'">
                         <div class="absolute inset-0 bg-black opacity-10"></div>
                     </div>
                 </div>
@@ -175,7 +215,7 @@
                         <span class="text-xs font-semibold text-accent uppercase tracking-wider">MİKRO ÖLÇEK</span>
                         <h3 class="mt-2 text-2xl font-bold text-gray-900">Modelleme ve Görsel İletişim</h3>
                         <p class="mt-4 text-gray-600">
-                            Fikirlerinizi çarpıcı görsellere dönüştürüyoruz. Mimari projeler için detaylı 3D modellemelerden, etkinlikleriniz için dikkat çekici afiş ve poster tasarımlarına kadar tüm görsel iletişim ihtiyaçlarınızı karşılıyoruz.
+                            Fikirlerinizi çarpıcı görsellere dönüştürüyoruz. Mimari projeler için detaylı fotogerçekçi 3D modellemelerden, etkinlikleriniz için dikkat çekici afiş ve poster tasarımlarına kadar tüm görsel iletişim ihtiyaçlarınızı karşılıyoruz.
                         </p>
                         <ul class="mt-4 space-y-2 text-gray-700 list-inside list-disc">
                             <li><span class="font-medium">Fotogerçekçi 3D Modelleme</span></li>
@@ -185,8 +225,8 @@
                         </ul>
                     </div>
                     <div class="md:w-1/2 mt-8 md:mt-0 relative rounded-xl overflow-hidden shadow-2xl">
-                        <!-- Placeholder Image for Modeling (Yeni vurgu rengi kullanıldı) -->
-                        <img src="https://placehold.co/600x400/C47A3E/FFFFFF?text=3D+MODELLEME+ÖRNEĞİ" alt="3D modelleme örneği placeholder" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/C47A3E/FFFFFF?text=3D+MODELLEME+ÖRNEĞİ'">
+                        <!-- Placeholder Image for Modeling -->
+                        <img src="https://placehold.co/600x400/C47A3E/FFFFFF?text=FOTOGERÇEKÇİ+3D+MODEL" alt="3D modelleme örneği placeholder" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/C47A3E/FFFFFF?text=FOTOGERÇEKÇİ+3D+MODEL'">
                         <div class="absolute inset-0 bg-black opacity-10"></div>
                     </div>
                 </div>
@@ -206,8 +246,8 @@
                         </ul>
                     </div>
                     <div class="md:w-1/2 mt-8 md:mt-0 relative rounded-xl overflow-hidden shadow-2xl">
-                        <!-- Placeholder Image for Technical Drawing (Yeni vurgu rengi kullanıldı) -->
-                        <img src="https://placehold.co/600x400/C47A3E/FFFFFF?text=TEKNİK+ÇİZİM+PLAN" alt="Teknik çizim planı placeholder" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/C47A3E/FFFFFF?text=TEKNİK+ÇİZİM+PLAN'">
+                        <!-- Placeholder Image for Technical Drawing -->
+                        <img src="https://placehold.co/600x400/C47A3E/FFFFFF?text=NAZIM+İMAR+PLANI" alt="Teknik çizim planı placeholder" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/C47A3E/FFFFFF?text=NAZIM+İMAR+PLANI'">
                         <div class="absolute inset-0 bg-black opacity-10"></div>
                     </div>
                 </div>
@@ -240,9 +280,18 @@
                 
                 <!-- Logo & Hakkında -->
                 <div>
-                    <h3 class="text-2xl font-extrabold tracking-tight text-white mb-4">
-                        <!-- Footer'da da metin logosu kullanıldı -->
-                        <span class="text-accent">Keep On</span> Design
+                    <h3 class="text-2xl font-extrabold tracking-tight text-white mb-4 flex items-center space-x-2">
+                        <!-- YENİ GÖRSEL LOGO -->
+                        <img 
+                            src="https://raw.githubusercontent.com/designkeepon-boop/keepondesign/refs/heads/main/src/unnamed.jpg" 
+                            alt="Keep On Design Logo" 
+                            class="w-10 h-10 rounded-full shadow-md"
+                            onerror="this.onerror=null;this.style.display='none'; document.getElementById('logo-text-footer').style.display='block';"
+                        >
+                        <!-- Metin Logosu (Görsel Yüklenemezse Yedek) -->
+                        <span id="logo-text-footer" style="display: block;">
+                            <span class="text-accent">Keep On</span> Design
+                        </span>
                     </h3>
                     <p class="text-sm">
                         Yaratıcılığı teknik yeterlilikle birleştiren, sürdürülebilir ve estetik çözümler sunuyoruz. Projeniz ne olursa olsun, en yüksek kalitede hizmet garantisi veriyoruz.
@@ -253,16 +302,24 @@
                 <div>
                     <h4 class="text-lg font-semibold text-white mb-4">İletişim</h4>
                     <ul class="space-y-2">
-                        <li>
+                        <li class="flex items-center space-x-2">
+                            <!-- Icon: Mail -->
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             <span class="font-medium text-white">E-posta:</span> designkeepon@gmail.com
                         </li>
-                        <li>
+                        <li class="flex items-center space-x-2">
+                            <!-- Icon: Instagram -->
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.75C7.99 4.75 4.75 7.99 4.75 12C4.75 16.01 7.99 19.25 12 19.25C16.01 19.25 19.25 16.01 19.25 12C19.25 7.99 16.01 4.75 12 4.75Z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.25 8.75h.01"></path></svg>
                             <span class="font-medium text-white">Instagram:</span> @designkeepon
                         </li>
-                        <li>
+                        <li class="flex items-center space-x-2">
+                            <!-- Icon: Phone -->
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.5a1.5 1.5 0 010 3H5v2h2.5a1.5 1.5 0 010 3H5v2h2.5a1.5 1.5 0 010 3H5a2 2 0 01-2-2v-10zm9 0h3.5a1.5 1.5 0 010 3H12v2h3.5a1.5 1.5 0 010 3H12v2h3.5a1.5 1.5 0 010 3H12a2 2 0 01-2-2v-10a2 2 0 012-2z"></path></svg>
                             <span class="font-medium text-white">Telefon (Kemal):</span> 0539 932 08 20
                         </li>
-                        <li>
+                        <li class="flex items-center space-x-2">
+                            <!-- Icon: Phone -->
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.5a1.5 1.5 0 010 3H5v2h2.5a1.5 1.5 0 010 3H5v2h2.5a1.5 1.5 0 010 3H5a2 2 0 01-2-2v-10zm9 0h3.5a1.5 1.5 0 010 3H12v2h3.5a1.5 1.5 0 010 3H12v2h3.5a1.5 1.5 0 010 3H12a2 2 0 01-2-2v-10a2 2 0 012-2z"></path></svg>
                             <span class="font-medium text-white">Telefon (Osman):</span> 0542 314 07 82
                         </li>
                     </ul>
@@ -285,9 +342,45 @@
         </div>
     </footer>
 
-    <!-- Script for Dynamic Year -->
+    <!-- Script for Dynamic Year and Smooth Scrolling/Mobile Menu -->
     <script>
+        // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') { // Ignore '#' link
+                    e.preventDefault();
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        // Close mobile menu if open
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('open');
+                        
+                        // Scroll smoothly
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update the URL hash without a jump (optional, for history)
+                        history.pushState(null, null, href);
+                    }
+                }
+            });
+        });
     </script>
 </body>
 </html>
