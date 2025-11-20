@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep On Design - Mekanı Yeniden Tanımlıyoruz</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Tailwind Configuration and Inter Font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        :root {
+            /* Renkler kahve/turuncu tonlarında tutuldu (Önceki geri alma işlemine dahil değildi) */
+            --color-background: #FAF8F4;
+            --color-accent: #C47A3E; 
+            --color-dark: #3E2723;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-background);
+            color: #1a1a1a;
+        }
+
+        /* Vurgu Rengine Göre Özelleştirilmiş Tailwind Sınıfları */
+        .text-accent { color: var(--color-accent); }
+        .bg-accent { background-color: var(--color-accent); }
+        .hover-bg-accent:hover { background-color: #a76634; } /* Hafif koyu ton */
+        .bg-dark { background-color: var(--color-dark); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+                <div class="flex justify-start lg:w-0 lg:flex-1">
+                    <!-- LOGO ALANI ESKİ METİN HALİNE DÖNDÜRÜLDÜ -->
+                    <a href="#" class="text-2xl font-extrabold tracking-tight text-gray-900">
+                        <span class="text-accent">Keep On</span> Design
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-10">
+                    <a href="#hizmetler" class="text-base font-medium text-gray-500 hover:text-accent transition duration-150">Hizmetlerimiz</a>
+                    <a href="#calismalar" class="text-base font-medium text-gray-500 hover:text-accent transition duration-150">Çalışma Alanları</a>
+                    <a href="#iletisim" class="text-base font-medium text-gray-500 hover:text-accent transition duration-150">İletişim</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 text-center">
+        <div class="max-w-4xl mx-auto">
+            <!-- Afilli Cümle 1: Başlık -->
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight">
+                Mekanı Yeniden <span class="text-accent">Tanımlıyoruz</span>. <br class="hidden sm:inline"> Geleceği Tasarlıyoruz.
+            </h1>
+            <!-- Afilli Cümle 2: Açıklama -->
+            <p class="mt-6 text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+                Sadece çizim yapmıyoruz, yaşam alanlarına ruh katıyoruz. Detaylı analizlerden ilham alan, teknik yeterlilikle harmanlanmış yaratıcı çözümlerimizle vizyonunuzu gerçeğe dönüştürüyoruz.
+            </p>
+            <div class="mt-10 flex justify-center space-x-4">
+                <a href="#hizmetler" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-accent hover-bg-accent shadow-lg transition duration-300 transform hover:scale-105">
+                    Hizmetlerimizi Keşfet
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <!-- Hizmetler bölümü arka planı tekrar beyaz yapıldı, gölge eklendi -->
+    <section id="hizmetler" class="py-16 sm:py-24 bg-white rounded-t-3xl shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-accent font-semibold tracking-wide uppercase">UZMANLIK ALANLARIMIZ</h2>
+                <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Detaydan Bütüne: Kapsamlı Çözümler
+                </p>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-10">
+                
+                <!-- Hizmet Kartı 1 -->
+                <div class="pt-6">
+                    <!-- Kartın arka planı açık bej yapıldı -->
+                    <div class="flow-root bg-gray-50 rounded-xl px-6 pb-8 h-full shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="-mt-6">
+                            <div>
+                                <span class="inline-flex items-center justify-center p-3 bg-accent rounded-full shadow-lg">
+                                    <!-- Icon: Cubes -->
+                                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m4 4v10m8-4v4"></path></svg>
+                                </span>
+                            </div>
+                            <h3 class="mt-6 text-xl font-semibold text-gray-900 tracking-tight">Modelleme Çalışmaları</h3>
+                            <p class="mt-4 text-base text-gray-500">
+                                Projelerinizi gerçeğe en yakın haliyle deneyimlemenizi sağlayan fotogerçekçi 3D modelleme ve görselleştirme hizmetleri sunuyoruz.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hizmet Kartı 2 -->
+                <div class="pt-6">
+                    <div class="flow-root bg-gray-50 rounded-xl px-6 pb-8 h-full shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="-mt-6">
+                            <div>
+                                <span class="inline-flex items-center justify-center p-3 bg-accent rounded-full shadow-lg">
+                                    <!-- Icon: City/Urban -->
+                                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 4h2"></path></svg>
+                                </span>
+                            </div>
+                            <h3 class="mt-6 text-xl font-semibold text-gray-900 tracking-tight">Kentsel Tasarım ve Analiz</h3>
+                            <p class="mt-4 text-base text-gray-500">
+                                Yaşanabilir, sürdürülebilir ve kimlikli kentler için kapsamlı kentsel tasarım projeleri ve detaylı mekansal analizler gerçekleştiriyoruz.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hizmet Kartı 3 -->
+                <div class="pt-6">
+                    <div class="flow-root bg-gray-50 rounded-xl px-6 pb-8 h-full shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="-mt-6">
+                            <div>
+                                <span class="inline-flex items-center justify-center p-3 bg-accent rounded-full shadow-lg">
+                                    <!-- Icon: Document/Technical -->
+                                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                                </span>
+                            </div>
+                            <h3 class="mt-6 text-xl font-semibold text-gray-900 tracking-tight">Teknik Çizim ve Araştırma</h3>
+                            <p class="mt-4 text-base text-gray-500">
+                                Kusursuz teknik çizimler, detaylı planlar ve projenizin temelini oluşturan güvenilir literatür taramaları sağlıyoruz.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Areas Section (Detailed) -->
+    <section id="calismalar" class="py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-gray-900 text-center sm:text-4xl mb-12">Çalışma Alanlarımızın Kapsamı</h2>
+            <div class="space-y-16">
+
+                <!-- Kentsel Tasarım & Analiz -->
+                <div class="md:flex md:items-center">
+                    <div class="md:w-1/2 md:pr-10">
+                        <span class="text-xs font-semibold text-accent uppercase tracking-wider">MAKRO ÖLÇEK</span>
+                        <h3 class="mt-2 text-2xl font-bold text-gray-900">Kentsel Tasarım ve Analiz Çalışmaları</h3>
+                        <p class="mt-4 text-gray-600">
+                            Kent kimliği, sürdürülebilirlik ve dirençlilik ilkelerine uygun, yaşam kalitesini artıran master planlar ve detaylı kentsel tasarım projeleri üretiyoruz. Jeolojik, sosyal ve çevresel risk analizleriyle desteklenen, veriye dayalı kararlar alıyoruz.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-gray-700 list-inside list-disc">
+                            <li><span class="font-medium">Kentsel Tasarım Projeleri</span></li>
+                            <li><span class="font-medium">Doğal Yapı Analizleri</span></li>
+                            <li><span class="font-medium">Yer Seçimi Analizleri (GES Uygunluk vb.)</span></li>
+                            <li><span class="font-medium">Risk Analizleri (Deprem vb.)</span></li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 mt-8 md:mt-0 relative rounded-xl overflow-hidden shadow-2xl">
+                        <!-- Placeholder Image for Urban Design Map (Yeni vurgu rengi kullanıldı) -->
+                        <img src="https://placehold.co/600x400/C47A3E/FFFFFF?text=KENTSEL+TASARIM+HARİTASI" alt="Kentsel tasarım haritası placeholder" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/C47A3E/FFFFFF?text=KENTSEL+TASARIM+HARİTASI'">
+                        <div class="absolute inset-0 bg-black opacity-10"></div>
+                    </div>
+                </div>
+                
+                <!-- Modelleme & Afiş -->
+                <div class="md:flex md:items-center flex-row-reverse">
+                    <div class="md:w-1/2 md:pl-10">
+                        <span class="text-xs font-semibold text-accent uppercase tracking-wider">MİKRO ÖLÇEK</span>
+                        <h3 class="mt-2 text-2xl font-bold text-gray-900">Modelleme ve Görsel İletişim</h3>
+                        <p class="mt-4 text-gray-600">
+                            Fikirlerinizi çarpıcı görsellere dönüştürüyoruz. Mimari projeler için detaylı 3D modellemelerden, etkinlikleriniz için dikkat çekici afiş ve poster tasarımlarına kadar tüm görsel iletişim ihtiyaçlarınızı karşılıyoruz.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-gray-700 list-inside list-disc">
+                            <li><span class="font-medium">Fotogerçekçi 3D Modelleme</span></li>
+                            <li><span class="font-medium">Vaziyet Planı Model Çalışmaları</span></li>
+                            <li><span class="font-medium">Etkinlik Afişi Tasarımı</span></li>
+                            <li><span class="font-medium">Kurumsal Poster Çalışmaları</span></li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 mt-8 md:mt-0 relative rounded-xl overflow-hidden shadow-2xl">
+                        <!-- Placeholder Image for Modeling (Yeni vurgu rengi kullanıldı) -->
+                        <img src="https://placehold.co/600x400/C47A3E/FFFFFF?text=3D+MODELLEME+ÖRNEĞİ" alt="3D modelleme örneği placeholder" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/C47A3E/FFFFFF?text=3D+MODELLEME+ÖRNEĞİ'">
+                        <div class="absolute inset-0 bg-black opacity-10"></div>
+                    </div>
+                </div>
+
+                <!-- Teknik Çizim & Literatür -->
+                <div class="md:flex md:items-center">
+                    <div class="md:w-1/2 md:pr-10">
+                        <span class="text-xs font-semibold text-accent uppercase tracking-wider">TEKNİK DESTEK</span>
+                        <h3 class="mt-2 text-2xl font-bold text-gray-900">Teknik Çizim ve Literatür Tarama</h3>
+                        <p class="mt-4 text-gray-600">
+                            Projenizin teknik altyapısını en ince ayrıntısına kadar hazırlıyoruz. Uygulama ve nazım imar planı çizimleri, çevre düzeni projeleri ve akademik çalışmalarınız için derinlemesine literatür araştırmaları bizim işimiz.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-gray-700 list-inside list-disc">
+                            <li><span class="font-medium">Nazım ve Uygulama İmar Planı Çizimi</span></li>
+                            <li><span class="font-medium">Çevre Düzeni Planı</span></li>
+                            <li><span class="font-medium">Akademik/Tez Literatür Taramaları</span></li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 mt-8 md:mt-0 relative rounded-xl overflow-hidden shadow-2xl">
+                        <!-- Placeholder Image for Technical Drawing (Yeni vurgu rengi kullanıldı) -->
+                        <img src="https://placehold.co/600x400/C47A3E/FFFFFF?text=TEKNİK+ÇİZİM+PLAN" alt="Teknik çizim planı placeholder" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/C47A3E/FFFFFF?text=TEKNİK+ÇİZİM+PLAN'">
+                        <div class="absolute inset-0 bg-black opacity-10"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Contact Summary -->
+    <section class="bg-accent text-white py-16 sm:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                Vizyonunuzu Hayata Geçirmeye Hazırız.
+            </h2>
+            <p class="mt-4 text-lg opacity-90">
+                Detaylı bilgi ve teklif almak için bizimle hemen iletişime geçin.
+            </p>
+            <div class="mt-8">
+                <a href="#iletisim" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-accent bg-white hover:bg-gray-100 shadow-lg transition duration-300 transform hover:scale-105">
+                    Hemen İletişime Geç
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="iletisim" class="py-12 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-400">
+                
+                <!-- Logo & Hakkında -->
+                <div>
+                    <h3 class="text-2xl font-extrabold tracking-tight text-white mb-4">
+                        <!-- Footer'da da metin logosu kullanıldı -->
+                        <span class="text-accent">Keep On</span> Design
+                    </h3>
+                    <p class="text-sm">
+                        Yaratıcılığı teknik yeterlilikle birleştiren, sürdürülebilir ve estetik çözümler sunuyoruz. Projeniz ne olursa olsun, en yüksek kalitede hizmet garantisi veriyoruz.
+                    </p>
+                </div>
+
+                <!-- İletişim Bilgileri (PDF'den alınmıştır) -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">İletişim</h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <span class="font-medium text-white">E-posta:</span> designkeepon@gmail.com
+                        </li>
+                        <li>
+                            <span class="font-medium text-white">Instagram:</span> @designkeepon
+                        </li>
+                        <li>
+                            <span class="font-medium text-white">Telefon (Kemal):</span> 0539 932 08 20
+                        </li>
+                        <li>
+                            <span class="font-medium text-white">Telefon (Osman):</span> 0542 314 07 82
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Hızlı Bağlantılar -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Hızlı Erişim</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#hizmetler" class="hover:text-white transition duration-150">Hizmetlerimiz</a></li>
+                        <li><a href="#calismalar" class="hover:text-white transition duration-150">Çalışma Alanlarımız</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-150">Gizlilik Politikası</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-10 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
+                &copy; <span id="currentYear"></span> Keep On Design. Tüm Hakları Saklıdır.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for Dynamic Year -->
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
